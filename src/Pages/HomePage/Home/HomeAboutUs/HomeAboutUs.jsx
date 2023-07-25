@@ -9,7 +9,7 @@ const HomeAboutUs = () => {
             </div>
             {/* ========================== */}
             <div className="mt-24 lg:w-[50%] text-center text-xs lg:text-base lg:text-left p-4 lg:-mt-[2px] space-y-3 lg:space-y-7">
-                <h1 className='text-[#FF3811] '>About Us</h1>
+                <h1 className='text-[#FF3811] font-bold'>About Us</h1>
                 <h1 className='hidden lg:block lg:text-5xl lg:font-bold '>We are qualified <br /> & of experience <br /> in this field</h1>
                 <h1 className='text-xl font-semibold lg:hidden'>We are qualified & of experience in this field</h1>
                 <p className='text-[#737373]'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
