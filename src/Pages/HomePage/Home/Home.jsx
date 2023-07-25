@@ -3,6 +3,7 @@ import img2 from '../../../assets/images/homeCarousel/2.jpg'
 import img3 from '../../../assets/images/homeCarousel/3.jpg'
 import img4 from '../../../assets/images/homeCarousel/4.jpg'
 import HomeAboutUs from './HomeAboutUs/HomeAboutUs';
+import HomeContact from './HomeContact/HomeContact';
 import Services from './Services/Services';
 const Home = () => {
     return (
@@ -51,6 +52,8 @@ const Home = () => {
             <HomeAboutUs></HomeAboutUs>
             {/* ============ Services Section========== */}
             <Services></Services>
+            {/* ============= ContactInfo section============ */}
+            <HomeContact></HomeContact>
         </>
     );
 };
