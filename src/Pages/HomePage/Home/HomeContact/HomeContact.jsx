@@ -6,7 +6,7 @@ import { CiLocationOn } from 'react-icons/ci';
 
 const HomeContact = () => {
     return (
-        <div className='space-y-3 mt-16 lg:flex justify-around lg:mt-[147px] text-white bg-[#151515] p-10'>
+        <div className='space-y-3 mt-16 lg:flex justify-around lg:mt-[147px] text-white bg-[#151515] p-10 rounded-md hover:bg-orange-600 duration-300'>
             <div className="flex items-center gap-2">
                 <BiCalendar size={25}></BiCalendar>
                 <div className="">
