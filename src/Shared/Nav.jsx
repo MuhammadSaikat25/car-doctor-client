@@ -15,6 +15,8 @@ const Nav = () => {
                     <NavLink>About</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>
+                    <NavLink to={'/singUp'}>Sing Up</NavLink>
+                    <NavLink to={'/LogIn'}>log In</NavLink>
                 </div>
                 <button className="border border-orange-400 p-2 rounded-md text-orange-400">
                     <NavLink>Appointment</NavLink>
@@ -33,6 +35,8 @@ const Nav = () => {
                             <NavLink>About</NavLink>
                             <NavLink>Services</NavLink>
                             <NavLink>Contact</NavLink>
+                            <NavLink to={'/singUp'}>Sing Up</NavLink>
+                            <NavLink to={'/logIn'}>log In</NavLink>
                         </div>
                         <div className="">
                             <NavLink>Appointment</NavLink>

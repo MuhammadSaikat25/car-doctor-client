@@ -9,6 +9,8 @@ import Main from './Pages/HomePage/Main';
 import Home from './Pages/HomePage/Home/Home';
 import ServiceDetails from './Pages/HomePage/Home/Services/ServiceDetails';
 import BookingOrder from './Pages/HomePage/Home/Services/BookingOrder';
+import SingUP from './Pages/SingUp/SingUP';
+import LogInPage from './Pages/LogInPage/LogInPage';
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'singUp',
+    element:<SingUP></SingUP>
+  },
+  {
+    path:"logIn",
+    element:<LogInPage></LogInPage>
+  }
 
 ]);
 
