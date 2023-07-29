@@ -8,6 +8,7 @@ import {
 import Main from './Pages/HomePage/Main';
 import Home from './Pages/HomePage/Home/Home';
 import ServiceDetails from './Pages/HomePage/Home/Services/ServiceDetails';
+import BookingOrder from './Pages/HomePage/Home/Services/BookingOrder';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
       {
         path:'serviceDetail/:id',
         element:<ServiceDetails></ServiceDetails>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
+
+      },
+      {
+        path:"bookingOrder/:id",
+        element:<BookingOrder></BookingOrder>,
         loader:({params})=>fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
 
       }

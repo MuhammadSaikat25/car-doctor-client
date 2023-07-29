@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import img1 from '../../../../assets/images/checkout/checkout.png'
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -16,20 +16,20 @@ const ServiceDetails = () => {
 
 
     const otherServices = services.filter(service => service._id !== data._id)
-    console.log(otherServices)
     return (
         <div className="max-w-7xl mx-auto w-full">
             <div className="mt-4 relative">
                 <img className="" src={img1} alt="" />
+                <h1 className="absolute lg:top-32 lg:left-20 top-8 left-10 text-white font-semibold lg:text-3xl">Service Details</h1>
                 <p className="hidden lg:block absolute bottom-0 left-[500px] bg-orange-400 p-3 text-white hover:bg-blue-500 duration-300 hover:rounded">Home/Service Details</p>
             </div>
-            <div className="lg:flex gap-10 mt-10">
+            <div className="lg:flex gap-10 mt-16">
                 <div className="lg:w-[50%]">
                     <img className="rounded-md" src={img} alt="" />
                     <h1 className="text-center lg:text-left mb-2 text-black font-bold text-xl">{title}</h1>
                     <p className="text-center p-2 text-xs lg:text-left mb-3">{description}</p>
                     {
-                        facility.map((data, i) =>
+                        facility?.map((data, i) =>
                             <div className="mt-2 border-t-2 border-red-600 bg-slate-200 p-2 text-gray-700 rounded-md text-center" key={i}>
                                 <h1 className="text-xl font-semibold text-black">{data.title}</h1>
                                 <h1>{data.details}</h1>
@@ -56,10 +56,12 @@ const ServiceDetails = () => {
                             <h1 className="absolute lg:-bottom-6 left-16 bg-orange-400 p-1 text-white rounded-md">Get A Quote</h1>
                         </div>
                     </div>
-                        <p className="text-center text-xl font-semibold"> price ${price}</p>
-                        <div className="flex justify-center mt-2">
+                    <p className="text-center text-xl font-semibold"> price ${price}</p>
+                    <div className="flex justify-center mt-2">
+                        <Link to={`/bookingOrder/${data._id}`}>
                             <button className="bg-orange-600 p-2 rounded-md text-white">Proceed Checkout</button>
-                        </div>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
