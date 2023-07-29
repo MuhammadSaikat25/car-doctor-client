@@ -2,10 +2,10 @@ import img from '../../../../assets/images/about_us/parts.jpg'
 import img2 from '../../../../assets/images/about_us/person.jpg'
 const HomeAboutUs = () => {
     return (
-        <section className='lg:flex items-center relative  p-2'>
-            <div className="mt-16  w-[90%] mx-auto lg:w-[50%] lg:mx-0 ">
+        <section className='lg:flex items-center relative py-2'>
+            <div className="mt-16  w-[90%] mx-auto lg:w-[50%] lg:mx-0">
                 <img className='w-[250px] h-[300px] lg:w-[460px] lg:h-[476px] rounded-md object-cover' src={img2} alt="" />
-                <img className='w-[200px] h-[250px] left-[100px] top-[170px] object-cover lg:w-[327px] absolute lg:top-[220px] lg:left-[190px] lg:h-[332px] border-4 rounded-md border-lime-100 lg:border-8' src={img} alt="" />
+                <img className='w-[200px] h-[250px] left-[90px] top-[170px] object-cover lg:w-[327px] absolute lg:top-[220px] lg:left-[190px] lg:h-[332px] border-1 rounded-md border-lime-100  lg:border-8' src={img} alt="" />
             </div>
             {/* ========================== */}
             <div className="mt-24 lg:w-[50%] text-center text-xs lg:text-base lg:text-left p-4 lg:-mt-[2px] space-y-3 lg:space-y-7">

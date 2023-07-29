@@ -6,10 +6,11 @@ import HomeAboutUs from './HomeAboutUs/HomeAboutUs';
 import HomeContact from './HomeContact/HomeContact';
 import OurTeam from './HomeContact/OurTeam';
 import Services from './Services/Services';
+import WhyChooseUs from './WhyChooseUs/WhyChooseUs';
 const Home = () => {
     return (
         <>
-            <div className=' rounded-md mt-[50px] '>
+            <div className=' rounded-md mt-[50px]  max-w-7xl mx-auto w-full'>
                 <div className="carousel relative">
                     <div id="slide1" className="carousel-item relative w-full">
                         <img src={img1} className="lg:w-[1280px] mx-auto lg:h-[600px] object-cover rounded-md" />
@@ -27,7 +28,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div id="slide2" className="carousel-item relative w-full">
-                        <img src={img2}className="lg:w-[1280px] mx-auto lg:h-[600px] rounded-md" />
+                        <img src={img2} className="lg:w-[1280px] mx-auto lg:h-[600px] rounded-md" />
                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                             <a href="#slide1" className="btn btn-circle bg-opacity-5">❮</a>
                             <a href="#slide3" className="btn btn-circle bg-opacity-5">❯</a>
@@ -50,13 +51,29 @@ const Home = () => {
                 </div>
             </div>
             {/* =========== About us section======== */}
-            <HomeAboutUs></HomeAboutUs>
+            <div className="max-w-7xl mx-auto w-full">
+                <HomeAboutUs></HomeAboutUs>
+            </div>
             {/* ============ Services Section========== */}
-            <Services></Services>
+            <div className="max-w-7xl mx-auto w-full">
+                <Services></Services>
+
+            </div>
             {/* ============= ContactInfo section============ */}
-            <HomeContact></HomeContact>
+            <div className="max-w-7xl mx-auto w-full">
+                <HomeContact></HomeContact>
+
+            </div>
             {/* =========== Met Our Team=========== */}
-            <OurTeam></OurTeam>
+            <div className="max-w-7xl mx-auto w-full">
+                <OurTeam></OurTeam>
+
+            </div>
+            {/* ============ Why Choose Us============= */}
+            <div className="max-w-7xl mx-auto w-full">
+
+                <WhyChooseUs></WhyChooseUs>
+            </div>
         </>
     );
 };

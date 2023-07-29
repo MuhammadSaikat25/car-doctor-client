@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import img from '../assets/icons/Wrench.svg'
+import img from '../assets/icons/Wrench.jpg'
 import { FaSlidersH, FaTimes } from 'react-icons/fa';
 import { useState } from "react";
 
