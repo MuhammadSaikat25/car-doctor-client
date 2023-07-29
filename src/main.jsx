@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Main from './Pages/HomePage/Main';
 import Home from './Pages/HomePage/Home/Home';
+import ServiceDetails from './Pages/HomePage/Home/Services/ServiceDetails';
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path:'serviceDetail/:id',
+        element:<ServiceDetails></ServiceDetails>,
+        loader:({params})=>fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
+
       }
     ]
   },

@@ -1,4 +1,5 @@
 import { BsArrowRightShort } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Service = ({ data }) => {
     const { img, price, title } = data
@@ -8,7 +9,7 @@ const Service = ({ data }) => {
             <h1 className="text-2xl">{title}</h1>
             <div className="flex justify-between items-center ">
                 <p className="text-orange-400 text-xl">Price: ${price}</p>
-                <BsArrowRightShort className='cursor-pointer' size={25} color='orange'></BsArrowRightShort>
+               <Link to={`/serviceDetail/${data._id}`}><BsArrowRightShort className='cursor-pointer' size={25} color='orange'></BsArrowRightShort></Link>
             </div>
         </div>
     );
