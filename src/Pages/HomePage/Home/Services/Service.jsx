@@ -12,7 +12,7 @@ const Service = ({ data }) => {
         }
     }
     return (
-        <div className="border w-fit rounded-md p-2 space-y-3 hover:scale-125 duration-300">
+        <div className="border w-fit rounded-md p-2 space-y-3 hover:scale-110 duration-300">
             <img className="w-full lg:w-[313px] lg:h-[208px] rounded-md object-cover" src={img} alt="" />
             <h1 className="text-2xl">{title}</h1>
             <div className="flex justify-between items-center ">
