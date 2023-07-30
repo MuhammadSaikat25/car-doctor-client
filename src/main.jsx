@@ -11,6 +11,8 @@ import ServiceDetails from './Pages/HomePage/Home/Services/ServiceDetails';
 import BookingOrder from './Pages/HomePage/Home/Services/BookingOrder';
 import SingUP from './Pages/SingUp/SingUP';
 import LogInPage from './Pages/LogInPage/LogInPage';
+import AuthProvider from './FireBase/AuthProvider';
+import PrivateRoute from './FireBase/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -23,34 +25,34 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path:'serviceDetail/:id',
-        element:<ServiceDetails></ServiceDetails>,
-        loader:({params})=>fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
+        path: 'serviceDetail/:id',
+        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
 
       },
       {
-        path:"bookingOrder/:id",
-        element:<BookingOrder></BookingOrder>,
-        loader:({params})=>fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
+        path: "bookingOrder/:id",
+        element: <PrivateRoute><BookingOrder></BookingOrder></PrivateRoute>,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
 
       }
     ]
   },
   {
-    path:'singUp',
-    element:<SingUP></SingUP>
+    path: 'singUp',
+    element: <SingUP></SingUP>
   },
   {
-    path:"logIn",
-    element:<LogInPage></LogInPage>
+    path: "logIn",
+    element: <LogInPage></LogInPage>
   }
 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className="">
-
-    <RouterProvider router={router} />
-
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </div>
 )

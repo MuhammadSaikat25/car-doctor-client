@@ -1,10 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import img from '../assets/icons/Wrench.jpg'
 import { FaSlidersH, FaTimes } from 'react-icons/fa';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../FireBase/AuthProvider";
 
 
 const Nav = () => {
+    const { logOut, user } = useContext(AuthContext)
+    console.log(user)
+    const handelLogOut = () => {
+        logOut()
+            .then(res = {})
+            .catch(error => { })
+    }
     const [open, setOpen] = useState(false)
     return (
         <>
@@ -15,8 +23,17 @@ const Nav = () => {
                     <NavLink>About</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>
-                    <NavLink to={'/singUp'}>Sing Up</NavLink>
-                    <NavLink to={'/LogIn'}>log In</NavLink>
+
+                    {
+                        user ? <>
+                            <NavLink onClick={handelLogOut}>log Out</NavLink>
+                            <NavLink to={'/singUp'}>Sing Up</NavLink>
+                        </>
+                            : <>
+                                <NavLink to={'/LogIn'}>log In</NavLink>
+                                <NavLink to={'/singUp'}>Sing Up</NavLink>
+                            </>
+                    }
                 </div>
                 <button className="border border-orange-400 p-2 rounded-md text-orange-400">
                     <NavLink>Appointment</NavLink>
@@ -35,8 +52,16 @@ const Nav = () => {
                             <NavLink>About</NavLink>
                             <NavLink>Services</NavLink>
                             <NavLink>Contact</NavLink>
-                            <NavLink to={'/singUp'}>Sing Up</NavLink>
-                            <NavLink to={'/logIn'}>log In</NavLink>
+                            {
+                                user ? <>
+                                    <NavLink onClick={handelLogOut}>log Out</NavLink>
+                                    <NavLink to={'/singUp'}>Sing Up</NavLink>
+                                </>
+                                    : <>
+                                        <NavLink to={'/LogIn'}>log In</NavLink>
+                                        <NavLink to={'/singUp'}>Sing Up</NavLink>
+                                    </>
+                            }
                         </div>
                         <div className="">
                             <NavLink>Appointment</NavLink>
