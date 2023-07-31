@@ -28,6 +28,7 @@ const Nav = () => {
                         user ? <>
                             <NavLink onClick={handelLogOut}>log Out</NavLink>
                             <NavLink to={'/singUp'}>Sing Up</NavLink>
+                            <NavLink to={'/dashboard'}>Dashboard</NavLink>
                         </>
                             : <>
                                 <NavLink to={'/LogIn'}>log In</NavLink>
@@ -56,6 +57,7 @@ const Nav = () => {
                                 user ? <>
                                     <NavLink onClick={handelLogOut}>log Out</NavLink>
                                     <NavLink to={'/singUp'}>Sing Up</NavLink>
+                                    <NavLink to={'/dashboard'}>Dashboard</NavLink>
                                 </>
                                     : <>
                                         <NavLink to={'/LogIn'}>log In</NavLink>

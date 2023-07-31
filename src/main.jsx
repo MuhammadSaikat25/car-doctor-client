@@ -13,7 +13,15 @@ import SingUP from './Pages/SingUp/SingUP';
 import LogInPage from './Pages/LogInPage/LogInPage';
 import AuthProvider from './FireBase/AuthProvider';
 import PrivateRoute from './FireBase/PrivateRoute';
+import Dashboard from './Dashboard/Dashboard';
+import AllUser from './Dashboard/Admin/AllUser';
+import AddItem from './Dashboard/Admin/AddItem';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -45,14 +53,31 @@ const router = createBrowserRouter([
   {
     path: "logIn",
     element: <LogInPage></LogInPage>
+  },
+  {
+    path: "dashboard",
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children: [
+      {
+        path: 'allUser',
+        element: <AllUser></AllUser>
+      },
+      {
+        path: "addItem",
+        element: <AddItem></AddItem>
+      }
+    ]
   }
+
 
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className="">
     <AuthProvider>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </AuthProvider>
   </div>
 )
