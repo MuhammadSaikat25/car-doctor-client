@@ -16,9 +16,9 @@ const Dashboard = () => {
 
                                 admin?.admin ? <>
                                      <NavLink to={'/'}>Home</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>AllUser</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>AddItem</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>Mange Item</NavLink>
+                                     <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
+                                     <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
+                                     <NavLink to={'/Dashboard/allUser'}>Mange Services</NavLink>
      
                                  </>
                                      : <>
@@ -42,18 +42,18 @@ const Dashboard = () => {
                         <nav className="flex flex-col absolute bg-slate-100 h-full w-full z-50 text-2xl font-semibold lg:hidden">
                             <div className="flex flex-col gap-2 mb-2">
                                 {
-                                    admin?.role === 'admin' ? <>
-                                        <NavLink to={'/'}>Home</NavLink>
-                                        <NavLink to={'/Dashboard/allUser'}>AllUser</NavLink>
-                                        <NavLink to={'/Dashboard/allUser'}>AddItem</NavLink>
-                                        <NavLink to={'/Dashboard/allUser'}>Mange Item</NavLink>
-
-                                    </>
-                                        : <>
-                                            <NavLink to={'/'}>Home</NavLink>
-                                            <NavLink to={''}>My Booking</NavLink>
-                                            <NavLink to={''}>Service</NavLink>
-                                        </>
+                                     admin?.admin ? <>
+                                     <NavLink to={'/'}>Home</NavLink>
+                                     <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
+                                     <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
+                                     <NavLink to={'/Dashboard/allUser'}>Mange Services</NavLink>
+     
+                                 </>
+                                     : <>
+                                         <NavLink to={'/'}>Home</NavLink>
+                                         <NavLink to={''}>My Booking</NavLink>
+                                         <NavLink to={''}>Service</NavLink>
+                                     </>
 
                                 }
 

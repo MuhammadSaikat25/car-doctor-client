@@ -8,7 +8,7 @@ const Services = () => {
         axios.get(`${import.meta.env.VITE_SERVER}service`)
             .then(data => setServices(data.data))
     }, [])
-    
+       
     return (
         <div className="lg:mt-[130px] p-10">
             <div className="text-center">
