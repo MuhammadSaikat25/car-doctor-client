@@ -1,14 +1,15 @@
+import { useContext } from "react";
 import useAllUser from "../../Hooks/useAllUser";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { AuthContext } from "../../FireBase/AuthProvider";
 
 
 const AllUser = () => {
     const axiosSecure = useAxiosSecure()
-
+    const{user}=useContext(AuthContext)
     const [users,refetch]=useAllUser()
 
     const makeAdmin = (email) => {
-        console.log(10)
         axiosSecure.patch(`${import.meta.env.VITE_SERVER}makeAdmin/${email}`)
             .then(res => {
                 if (res.data.modifiedCount === 1) {
@@ -17,7 +18,14 @@ const AllUser = () => {
             })
     }
 
-    
+    const DeleteUser=(email)=>{
+        axiosSecure.delete(`deleteUser/${email}`)
+            .then(data=>{
+                if(data.data.deletedCount===1){
+                    refetch()
+                }
+            })
+    }
 
     return (
         <div>
@@ -39,12 +47,12 @@ const AllUser = () => {
 
                                 {
                                     users?.map((data, i) =>
-                                        <tr  key={data._id} className=''>
+                                        <tr  key={data._id} className={`${user.email===data.email?'bg-slate-200':''}`}>
                                             <th>{i + 1}</th>
                                             <td>{data.name}</td>
                                             <td>{data.email}</td>
                                             <td className="cursor-pointer" onClick={()=>makeAdmin(data.email)}>{data.role === 'admin' ? "admin" : 'user'}</td>
-                                            <td><button  className="cursor-pointer bg-blue-500 text-white p-1 rounded">Delete</button></td>
+                                            <td><button onClick={()=>DeleteUser(data.email)} className="cursor-pointer bg-blue-500 text-white p-1 rounded">Delete</button></td>
                                         </tr>)
                                 }
 
