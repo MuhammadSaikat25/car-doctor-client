@@ -21,6 +21,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import ManageItem from './Dashboard/Admin/ManageItem';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "addItem",
         element: <AddItem></AddItem>
+      },
+      {
+        path: "manageService",
+        element: <ManageItem></ManageItem>
       }
     ]
   }

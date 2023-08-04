@@ -31,7 +31,7 @@ const ServiceDetails = () => {
                     {
                         facility?.map((data, i) =>
                             <div className="mt-2 border-t-2 border-red-600 bg-slate-200 p-2 text-gray-700 rounded-md text-center" key={i}>
-                                <h1 className="text-xl font-semibold text-black">{data.title}</h1>
+                                <h1 className="text-xl font-semibold">{data.title}</h1>
                                 <h1>{data.details}</h1>
                             </div>)
                     }

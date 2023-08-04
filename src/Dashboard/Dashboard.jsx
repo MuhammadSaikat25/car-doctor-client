@@ -18,7 +18,7 @@ const Dashboard = () => {
                                      <NavLink to={'/'}>Home</NavLink>
                                      <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
                                      <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>Mange Services</NavLink>
+                                     <NavLink to={'/Dashboard/manageService'}>Mange Services</NavLink>
      
                                  </>
                                      : <>
@@ -46,7 +46,7 @@ const Dashboard = () => {
                                      <NavLink to={'/'}>Home</NavLink>
                                      <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
                                      <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>Mange Services</NavLink>
+                                     <NavLink to={'/Dashboard/manageService'}>Mange Services</NavLink>
      
                                  </>
                                      : <>
