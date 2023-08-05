@@ -16,15 +16,15 @@ const Dashboard = () => {
 
                                 admin?.admin ? <>
                                      <NavLink to={'/'}>Home</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
-                                     <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
-                                     <NavLink to={'/Dashboard/manageService'}>Mange Services</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/allUser'}>Manage User</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/addItem'}>Add Services</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/manageService'}>Mange Services</NavLink>
      
                                  </>
                                      : <>
-                                         <NavLink to={'/'}>Home</NavLink>
-                                         <NavLink to={'/Dashboard/myBooking'}>My Booking</NavLink>
-                                         <NavLink to={''}>Service</NavLink>
+                                         <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/'}>Home</NavLink>
+                                         <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/myBooking'}>My Booking</NavLink>
+                                         <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/services'}>Service</NavLink>
                                      </>
      
                              }
@@ -43,16 +43,16 @@ const Dashboard = () => {
                             <div className="flex flex-col gap-2 mb-2">
                                 {
                                      admin?.admin ? <>
-                                     <NavLink to={'/'}>Home</NavLink>
-                                     <NavLink to={'/Dashboard/allUser'}>Manage User</NavLink>
-                                     <NavLink to={'/Dashboard/addItem'}>Add Services</NavLink>
-                                     <NavLink to={'/Dashboard/manageService'}>Mange Services</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/'}>Home</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/allUser'}>Manage User</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/addItem'}>Add Services</NavLink>
+                                     <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={'/Dashboard/manageService'}>Mange Services</NavLink>
      
                                  </>
                                      : <>
                                          <NavLink to={'/'}>Home</NavLink>
-                                         <NavLink to={''}>My Booking</NavLink>
-                                         <NavLink to={''}>Service</NavLink>
+                                         <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={''}>My Booking</NavLink>
+                                         <NavLink className={({isActive})=>isActive?'text-sky-500':''} to={''}>Service</NavLink>
                                      </>
 
                                 }

@@ -24,6 +24,7 @@ import {
 import ManageItem from './Dashboard/Admin/ManageItem';
 import MyBooking from './Dashboard/User/MyBooking';
 import Services from './Pages/Service/Services';
+import PrivetAdminRoute from './Dashboard/Admin/PrivetAdminRoute';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -67,19 +68,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'allUser',
-        element: <AllUser></AllUser>
+        element: <PrivetAdminRoute><AllUser></AllUser></PrivetAdminRoute>
       },
       {
         path: "addItem",
-        element: <AddItem></AddItem>
+        element: <PrivetAdminRoute><AddItem></AddItem></PrivetAdminRoute>
       },
       {
         path: "manageService",
-        element: <ManageItem></ManageItem>
+        element: <PrivetAdminRoute><ManageItem></ManageItem></PrivetAdminRoute>
       },
       {
         path:'myBooking',
         element:<MyBooking></MyBooking>
+      },
+      {
+        path:'services',
+        element:<Services></Services>
       }
     ]
   }

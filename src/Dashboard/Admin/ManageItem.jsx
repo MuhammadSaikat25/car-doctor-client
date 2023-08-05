@@ -18,17 +18,38 @@ const ManageItem = () => {
     return (
         <>
             <ToastContainer></ToastContainer>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10" >
-                {
-                    services.map(data => <div className="border w-fit mx-auto p-2 rounded-md shadow-sm shadow-blue-100" key={data._id}>
-                        <img className="w-[300px] h-[200px] rounded-md object-cover mx-auto" src={data.img} alt="" />
-                        <h1 className="text-center">{data.title}</h1>
-                        <div className="flex justify-center">
-                            <button onClick={() => deleteService(data._id)} className="w-full bg-sky-700 text-white">Delete</button>
-                        </div>
-                    </div>)
-                }
-            </div>
+            {
+                services && (
+                    <div className="overflow-x-auto">
+                        <table className="table">
+
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {
+                                    services?.map((data, i) =>
+                                        <tr key={data._id}>
+                                            <th>{i + 1}</th>
+                                            <th><img className="w-[70px] h-[70px] rounded-full" src={data.img} alt="" /></th>
+                                            <td>{data.title}</td>
+                                            <td>${data.price}</td>
+                                            <td><button onClick={() => deleteService(data._id)} className="cursor-pointer bg-blue-500 text-white p-1 rounded">Delete</button></td>
+                                        </tr>)
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                )
+            }
         </>
     );
 };
