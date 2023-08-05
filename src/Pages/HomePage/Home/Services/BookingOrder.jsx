@@ -22,7 +22,7 @@ const BookingOrder = () => {
         const message = e.target.message.value
         e.target.reset()
         const bookingData = {
-            name, phone, serviceName, price, email, message
+            name, phone, serviceName, price, email, message,image:service.img
         }
         console.log(bookingData)
         axios.post(`${import.meta.env.VITE_SERVER}postBooking`, { bookingData })

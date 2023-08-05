@@ -22,6 +22,8 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import ManageItem from './Dashboard/Admin/ManageItem';
+import MyBooking from './Dashboard/User/MyBooking';
+import Services from './Pages/Service/Services';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute><BookingOrder></BookingOrder></PrivateRoute>,
         loader: ({ params }) => fetch(`${import.meta.env.VITE_SERVER}singleService/${params.id}`)
 
+      },
+      {
+        path:'services',
+        element:<Services></Services>
       }
     ]
   },
@@ -70,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "manageService",
         element: <ManageItem></ManageItem>
+      },
+      {
+        path:'myBooking',
+        element:<MyBooking></MyBooking>
       }
     ]
   }

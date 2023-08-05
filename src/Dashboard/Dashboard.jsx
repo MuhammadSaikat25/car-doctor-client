@@ -23,7 +23,7 @@ const Dashboard = () => {
                                  </>
                                      : <>
                                          <NavLink to={'/'}>Home</NavLink>
-                                         <NavLink to={''}>My Booking</NavLink>
+                                         <NavLink to={'/Dashboard/myBooking'}>My Booking</NavLink>
                                          <NavLink to={''}>Service</NavLink>
                                      </>
      

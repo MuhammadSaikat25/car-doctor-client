@@ -7,7 +7,6 @@ import { AuthContext } from "../FireBase/AuthProvider";
 
 const Nav = () => {
     const { logOut, user } = useContext(AuthContext)
-    console.log(user)
     const handelLogOut = () => {
         logOut()
             .then(res = {})
