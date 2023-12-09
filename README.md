@@ -1,8 +1,19 @@
-# React + Vite
+# Car repaire website (mern srack) 
+* This is a car repaire website . User can take any service .
+* User can't take any services with out login . After Login user can also see selected service details and confrim his selected service.
+* There is two role admin and user .
+* User can his all booking service.
+#  Admin 
+* Admin has access to Dashborad.
+* Where admin can manage user . Admin can make also admin another user and deleted any user.
+* Admin can add any service .
+* Admin can delete any serice.
+# Technoloy i have used 
+1 React.js
+2 Tailwind.css
+3 exress.js 
+4 mongodb 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Admin account : Tabia@gmail.com | pass: 1234567 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+live link: https://car-doctor-61feb.web.app/
